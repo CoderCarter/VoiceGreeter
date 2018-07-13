@@ -26,5 +26,15 @@ namespace Hello
         {
             this.InitializeComponent();
         }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElement mediaElement = new MediaElement();
+            var text = "Hello, " + firstNameText.Text;
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync(text);
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
+        }
     }
 }

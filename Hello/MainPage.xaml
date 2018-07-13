@@ -9,6 +9,35 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
 
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" 
+                   Text="The Auto Greeter" Grid.ColumnSpan="3"
+                   Margin=" 0, 0, 0, 10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="Bold"
+                   Text="First Name "/>
+        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" 
+                 Width="150"/>
+
+        <Button x:Name="Button" Content="Run Me" Grid.Column="1" 
+                Grid.Row="3" Grid.ColumnSpan="2" Margin="10" Click="Button_Click" />
     </Grid>
 </Page>
